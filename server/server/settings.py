@@ -16,10 +16,15 @@ import os
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
+# Get AlphaVantage API Key from env
+AV_API_KEY = os.environ.get("AV_API_KEY")
+
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
+# TODO: Use https://gist.github.com/ndarville/3452907 to generate proper secret key
+# for production and add it to heroku env variables
 SECRET_KEY = 'z5y!zpjp3tz&*(nh_l)r%fqd)z@z$&ac_qr)quriizg==@&y-5'
 
 # SECURITY WARNING: don't run with debug turned on in production!
