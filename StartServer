@@ -1,0 +1,8 @@
+#!/bin/bash
+
+# Exports
+export key=$(cat key.txt)
+
+# Change directory into server and run
+cd server
+python3 manage.py runserver
