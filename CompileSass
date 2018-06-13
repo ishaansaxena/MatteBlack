@@ -1,0 +1,3 @@
+#!/bin/bash
+
+sass --watch server/static/sass/:server/static/css/
