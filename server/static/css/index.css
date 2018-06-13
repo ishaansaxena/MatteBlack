@@ -15,7 +15,10 @@ body {
 .view-front {
   height: 110vh;
   background: #222222;
-  display: table; }
+  display: table;
+  background-size: cover;
+  background-image: linear-gradient(rgba(34, 34, 34, 0.85), rgba(34, 34, 34, 0.85)), url("../assets/background.jpg");
+  filter: grayscale(1); }
   .view-front .navbar {
     padding: 3rem 0; }
     .view-front .navbar .matte-black {
