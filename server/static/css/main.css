@@ -3,7 +3,7 @@
   margin: 0;
   padding: 0; }
 
-.jo-sans {
+.jo-sans, .btn {
   font-family: "Josefin Sans", sans-serif; }
 
 .jo-slab {

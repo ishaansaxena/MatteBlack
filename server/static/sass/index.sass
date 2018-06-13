@@ -1,30 +1,36 @@
 @import "_config.sass"
 
 body
-    height: 100vh
     width: 100vw
+
+.view-front
+    height: 110vh
     background: $black
-    overflow: hidden
+    display: table
 
-#coming-soon
-    display: block
-    position: absolute
-    top: 50%
-    left: 50%
-    transform: translate(-50%, -50%)
-    padding: 2rem
+    .navbar
+        padding: 3rem 0
 
-    .heading, .subheading
-        @extend .jo-slab
-        @extend .reset
+        .matte-black
+            @extend .jo-slab
+            color: $C100
+            font-size: 2rem
 
-    .heading
-        color: $C100
-        font-size: 2.5rem
-        font-weight: bold
-        padding: 2rem 4rem 1.6rem 4rem
-        border: solid 1px $C050
+    .content
+        position: absolute
+        top: 50%
+        left: 50%
+        transform: translate(-50%, -50%)
 
-    .subheading
-        color: $C050
-        margin: 1rem
+        .description
+            @extend .jo-sans
+            color: $C200
+            font-size: 1rem
+            line-height: 1.5
+
+        .btn
+            margin-top: 1rem
+
+
+.view-footer
+    min-height: 2rem
