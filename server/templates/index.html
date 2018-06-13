@@ -1,6 +1,18 @@
 {% extends "base.html" %}
 {% load static %}
 
-{% block content %}
+{% block title %}MatteBlack - Coming Soon{% endblock %}
 
+{% block resources %}
+    <!-- For index.html -->
+    <link rel="stylesheet" href="{% static '/css/index.css' %}">
+{% endblock %}
+
+
+{% block content %}
+    <!-- For index.html -->
+    <div id="coming-soon" class="text-center">
+        <h1 class="heading">MatteBlack</h1>
+        <p class="subheading">Coming Soon</p>
+    </div>
 {% endblock %}
