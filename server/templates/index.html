@@ -14,7 +14,7 @@
     <div class="container-fluid view-front">
         <div class="container">
             <nav class="navbar sticky-top">
-                <a class="navbar-brand matte-black" href="#">MatteBlack</a>
+                <a class="navbar-brand matte-black" href="{% url 'home' %}">MatteBlack</a>
             </nav>
         </div>
         <div class="container content">
@@ -22,10 +22,15 @@
                 <div class="col-xl-8 col-sm-12 description">
                     <div class="h1">Stock Analytics</div>
                     <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                        MatteBlack is an analytics tool for the masses - open source and
+                        free. We use technology such as AlphaVantage and Plotly to bring
+                        to you a state-of-the-art analytics dashboard with all kinds of
+                        different techincal indicators for stocks, crypto currency, and
+                        foreign exchange.
                     </p>
-                    <button type="button" class="btn btn-outline-light">Try it Free</button>
+                    <a href="{% url 's:index' %}" class="btn btn-outline-light">Try it Free</a>
                 </p>
+                </div>
             </div>
         </div>
     </div>
