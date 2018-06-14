@@ -9,6 +9,9 @@
 .jo-slab, .navbar .navbar-brand, .navbar .btn-nav {
   font-family: "Josefin Slab", serif; }
 
+body {
+  font-size: 0.9rem; }
+
 .navbar .navbar-brand {
   padding: 0.85rem 1rem 0.65rem 1rem;
   font-size: 1rem;
@@ -25,10 +28,32 @@
     border-color: transparent;
     color: #FFFFFF; }
 .navbar .btn-nav {
-  padding: 0.35rem 1rem 0.15rem 1rem;
+  padding: 0.35rem 0 0.15rem 0;
   font-size: 1rem;
   font-weight: bolder;
   color: #FFFFFF;
   background: #00796B; }
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 99;
+  padding: 3rem 0 0 0;
+  background: red;
+  box-shadow: inset -1px 0 0 rgba(34, 34, 34, 0.05); }
+  .sidebar .sidebar-sticky {
+    position: sticky;
+    top: 0;
+    height: calc(100vh - 3rem);
+    padding-top: 0.5rem;
+    overflow-x: hidden;
+    overflow-y: auto;
+    box-shadow: inset -1px 0 10px rgba(34, 34, 34, 0.05); }
+    .sidebar .sidebar-sticky .nav {
+      margin-bottom: 1rem; }
+    .sidebar .sidebar-sticky .sidebar-heading {
+      padding-left: 1rem; }
 
 /*# sourceMappingURL=dashboard.css.map */

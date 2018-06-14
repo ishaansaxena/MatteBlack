@@ -1,5 +1,8 @@
 @import "_config.sass"
 
+body
+    font-size: 0.9rem
+
 .navbar
     .navbar-brand
         @extend .jo-slab
@@ -23,8 +26,33 @@
 
     .btn-nav
         @extend .jo-slab
-        padding: 0.35rem 1rem 0.15rem 1rem
+        padding: 0.35rem 0 0.15rem 0
         font-size: 1rem
         font-weight: bolder
         color: $white
         background: $A200
+
+.sidebar
+    position: fixed
+    top: 0
+    bottom: 0
+    left: 0
+    z-index: 99
+    padding: 3rem 0 0 0
+    background: red
+    box-shadow: inset -1px 0 0 rgba($black, 0.05)
+
+    .sidebar-sticky
+        position: sticky
+        top: 0
+        height: calc(100vh - 3rem)
+        padding-top: 0.5rem
+        overflow-x: hidden
+        overflow-y: auto
+        box-shadow: inset -1px 0 10px rgba($black, 0.05)
+
+        .nav
+            margin-bottom: 1rem
+
+        .sidebar-heading
+            padding-left: 1rem
