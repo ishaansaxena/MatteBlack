@@ -31,8 +31,9 @@ body {
     transform: translate(-50%, -40%); }
     .view-front .content .description {
       color: #FFFFFF;
-      font-size: 1rem;
-      line-height: 1.5; }
+      font-size: 1.25rem;
+      font-weight: 300;
+      line-height: 1.75; }
     .view-front .content .btn {
       margin-top: 1rem; }
 

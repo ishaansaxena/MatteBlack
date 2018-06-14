@@ -12,7 +12,13 @@
 {% block content %}
     <!-- For index.html -->
     <div class="container-fluid view-front">
-        <div class="container">
+        <div class="container d-none d-md-block">
+            <nav class="navbar sticky-top">
+                <a class="navbar-brand matte-black" href="{% url 'home' %}">MatteBlack</a>
+                <a class="git" href="https://github.com/ishaansaxena/MatteBlack" target="_blank">Github</a>
+            </nav>
+        </div>
+        <div class="container d-md-none reset">
             <nav class="navbar sticky-top">
                 <a class="navbar-brand matte-black" href="{% url 'home' %}">MatteBlack</a>
                 <a class="git" href="https://github.com/ishaansaxena/MatteBlack" target="_blank">Github</a>

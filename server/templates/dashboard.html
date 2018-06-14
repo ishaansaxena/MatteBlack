@@ -15,6 +15,7 @@
         <!-- Resources [External] -->
         <link rel="stylesheet" href="{% static '/css/bootstrap.min.css' %}">
         <script type="text/javascript" href="{% static '/js/bootstrap.min.js' %}"></script>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
         <!-- Reources [Internal] -->
         <link rel="stylesheet" href="{% static '/css/dashboard.css' %}">
@@ -35,13 +36,15 @@
                 <nav class="col-md-3 col-lg-2 d-none d-md-block bg-light sidebar">
                     <div class="sidebar-sticky">
                         <ul class="nav flex-column">
-                            <li class="nav-item"><a class="nav-link" href="#">Dashboard</a></li>
-                            <!-- <li class="nav-item"><a class="nav-link" href="#">Stocks</a></li> -->
-                            <!-- <li class="nav-item"><a class="nav-link" href="#">Crypto</a></li> -->
-                            <!-- <li class="nav-item"><a class="nav-link" href="#">Forex</a></li> -->
-                            <li class="nav-item"><a class="nav-link" href="#">Sector Performances</a></li>
-                            <!-- <li class="nav-item"><a class="nav-link" href="#">Tracked Symbols</a></li> -->
-                            <li class="nav-item"><a class="nav-link" href="#">Settings</a></li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#"><i class="material-icons">home</i>Dashboard</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#"><i class="material-icons">bubble_chart</i>Sector Performances</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#"><i class="material-icons">settings</i>Settings</a>
+                            </li>
                         </ul>
                         {% block sidebar %}{% endblock %}
                     </div>
