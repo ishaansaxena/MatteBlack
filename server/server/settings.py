@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/2.0/ref/settings/
 """
 
 import os
+import json
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -19,6 +20,13 @@ TEMPLATES_DIRS = [os.path.join(BASE_DIR, 'templates'), ]
 
 # Get AlphaVantage API Key from env
 AV_API_KEY = os.environ.get("AV_API_KEY")
+
+# Get ticker data
+TICKER_DATA_FILE = "tickerdata/ticker.json"
+try:
+    TICKER_DATA = json.loads(open(TICKER_DATA_FILE).read())
+except:
+    raise FileNotFoundError("%s not found" % TICKER_DATA_FILE)
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.0/howto/deployment/checklist/
