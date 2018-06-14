@@ -3,7 +3,7 @@
   margin: 0;
   padding: 0; }
 
-.jo-sans, .view-front .content .description {
+.jo-sans, .view-front .navbar .git, .view-front .content .description {
   font-family: "Josefin Sans", sans-serif; }
 
 .jo-slab, .view-front .navbar .matte-black {

@@ -1,12 +1,20 @@
-{% extends "base.html" %}
+{% extends "dashboard.html" %}
 {% load static %}
 
-{% block title %}Stocks on MatteBlack{% endblock %}
+{% block title %}MatteBlack{% endblock %}
 
 {% block resources %}
     <!-- For s:index -->
 {% endblock %}
 
+{% block btn_nav %}
+    <!-- For s:index -->
+    <ul class="navbar-nav px-3 d-none d-md-block btn-nav">
+        <li class="nav-item text-nowrap">
+            <a class="nav-link" href="#">Sign Out</a>
+        </li>
+    </ul>
+{% endblock %}
 
 {% block content %}
     <!-- For s:index -->

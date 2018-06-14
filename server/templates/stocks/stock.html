@@ -1,20 +1,28 @@
-{% extends "base.html" %}
+{% extends "dashboard.html" %}
 {% load static %}
 
-{% block title %}{{ symbol }} - Dashboard{% endblock %}
+{% block title %}{{ symbol }}{% endblock %}
 
 {% block resources %}
     <!-- For s:stock -->
 {% endblock %}
 
+{% block btn_nav %}
+    <!-- For s:stock -->
+    <ul class="navbar-nav px-3 d-none d-md-block btn-nav">
+        <li class="nav-item text-nowrap">
+            <a class="nav-link" href="#">Track</a>
+        </li>
+    </ul>
+{% endblock %}
 
 {% block content %}
     <!-- For s:stock -->
-    <h3>Symbol</h3>
+    <!-- <h3>Symbol</h3>
     {{ symbol }}
     <h3>Meta</h3>
     {{ meta_data }}
     <h3>Data</h3>
-    {{ data }}
+    {{ data }} -->
 
 {% endblock %}
