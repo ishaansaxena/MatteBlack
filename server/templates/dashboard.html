@@ -37,7 +37,7 @@
                     <div class="sidebar-sticky">
                         <ul class="nav flex-column">
                             <li class="nav-item">
-                                <a class="nav-link" href="#"><i class="material-icons">home</i>Dashboard</a>
+                                <a class="nav-link" href="{% url 's:index' %}"><i class="material-icons">dashboard</i>Dashboard</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#"><i class="material-icons">bubble_chart</i>Sector Performances</a>
@@ -49,11 +49,14 @@
                         {% block sidebar %}{% endblock %}
                     </div>
                 </nav>
+                <div class="content col-md-9 col-lg-10 ml-sm-auto">
+                    <!-- Data -->
+                    <div class="container-fluid">
+                        {% block content %}{% endblock %}
+                    </div>
+                </div>
             </div>
         </div>
-
-        <!-- Data -->
-        {% block content %}{% endblock %}
 
         <!-- Scripts -->
         {% block scripts %}{% endblock %}

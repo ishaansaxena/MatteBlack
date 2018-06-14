@@ -12,6 +12,9 @@
 body {
   font-size: 0.9rem; }
 
+.content {
+  padding: 5rem 0 2rem 0; }
+
 .navbar .navbar-brand {
   padding: 0.85rem 1rem 0.65rem 1rem;
   font-size: 1rem;
@@ -56,7 +59,8 @@ body {
     .sidebar .sidebar-sticky .nav-link {
       font-size: 0.9rem;
       font-weight: 500;
-      color: #626d78; }
+      color: #626d78;
+      padding: 0.33rem 1rem; }
       .sidebar .sidebar-sticky .nav-link:hover {
         color: #1d2124; }
       .sidebar .sidebar-sticky .nav-link.active {
