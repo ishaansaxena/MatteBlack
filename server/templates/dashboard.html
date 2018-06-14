@@ -1,0 +1,38 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <!-- Metadata -->
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE-edge">
+        <meta name="viewport" content="width=device-width, minimum-scale=1.0">
+
+        <title>{% block title %}{% endblock %} - Dashboard</title>
+
+        <meta name="author" content="Ishaan Saxena">
+
+        <!-- Resources [External] -->
+        <link rel="stylesheet" href="{% static '/css/bootstrap.min.css' %}">
+        <script type="text/javascript" href="{% static '/js/bootstrap.min.js' %}"></script>
+
+        <!-- Reources [Internal] -->
+        <link rel="stylesheet" href="{% static '/css/dashboard.css' %}">
+        {% block resources %}{% endblock %}
+    </head>
+    <body>
+        <!-- Navbar -->
+        <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
+            <a class="navbar-brand col-md-2 mr-0" href="#">MatteBlack</a>
+            <input class="form-control form-control-dark w-100" type="text" name="Search"
+            placeholder="Search" aria-label="Search">
+            {% block btn_nav %}{% endblock %}
+        </nav>
+
+        <!-- Data -->
+        {% block content %}{% endblock %}
+
+        <!-- Scripts -->
+        {% block scripts %}{% endblock %}
+    </body>
+</html>
