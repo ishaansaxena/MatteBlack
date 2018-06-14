@@ -22,7 +22,7 @@ body {
   .view-front .navbar {
     padding: 3rem 0; }
     .view-front .navbar .matte-black {
-      color: #CFD8DC;
+      color: #FFFFFF;
       font-size: 2rem; }
   .view-front .content {
     position: absolute;
@@ -30,7 +30,7 @@ body {
     left: 50%;
     transform: translate(-50%, -40%); }
     .view-front .content .description {
-      color: #B0BEC5;
+      color: #FFFFFF;
       font-size: 1rem;
       line-height: 1.5; }
     .view-front .content .btn {

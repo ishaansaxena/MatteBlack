@@ -6,7 +6,7 @@
 .jo-sans {
   font-family: "Josefin Sans", sans-serif; }
 
-.jo-slab, .navbar .navbar-brand {
+.jo-slab, .navbar .navbar-brand, .navbar .btn-nav {
   font-family: "Josefin Slab", serif; }
 
 .navbar .navbar-brand {
@@ -23,11 +23,12 @@
   .navbar .form-control:focus {
     outline: none;
     border-color: transparent;
-    background-color: #eceff1; }
+    color: #FFFFFF; }
 .navbar .btn-nav {
-  padding: 0.25rem 1rem 0.25rem 1rem;
+  padding: 0.35rem 1rem 0.15rem 1rem;
   font-size: 1rem;
-  background: #37474F;
-  color: #FFFFFF; }
+  font-weight: bolder;
+  color: #FFFFFF;
+  background: #00796B; }
 
 /*# sourceMappingURL=dashboard.css.map */
