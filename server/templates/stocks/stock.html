@@ -5,6 +5,10 @@
 
 {% block resources %}
     <!-- For s:stock -->
+    <!-- JS/Django interface -->
+    <script type="text/javascript">
+
+    </script>
 {% endblock %}
 
 {% block btn_nav %}
@@ -45,10 +49,11 @@
 
 {% block content %}
     <!-- For s:stock -->
-    <h3>Symbol</h3>
-    {{ symbol }}
-    <h3>Meta</h3>
-    {{ meta_data }}
+    <h3>Info</h3>
+    Name: {{ Name }}<br>
+    Symbol: {{ symbol }}<br>
+    Sector: {{ Sector }}<br>
+    Industry: {{ Industry }}<br>
     <h3>Data</h3>
     {{ data }}
 
