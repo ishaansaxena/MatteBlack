@@ -1,0 +1,35 @@
+@import url("https://fonts.googleapis.com/css?family=Josefin+Sans|Josefin+Slab");
+.reset, .ticker, .name, .info {
+  margin: 0;
+  padding: 0;
+  line-height: 1; }
+
+.jo-sans {
+  font-family: "Josefin Sans", sans-serif; }
+
+.jo-slab, .ticker {
+  font-family: "Josefin Slab", serif; }
+
+.ticker {
+  padding-top: 1rem;
+  font-size: 4rem;
+  font-weight: 900; }
+
+.name {
+  font-size: 1.5rem;
+  font-weight: 100; }
+
+.info-outer {
+  margin-top: 0.5rem; }
+
+.info {
+  line-height: 1.25;
+  font-size: 1rem;
+  font-weight: 500; }
+  .info .info-description {
+    display: inline-block;
+    width: 5rem;
+    font-size: 1rem;
+    font-weight: 100; }
+
+/*# sourceMappingURL=stock.css.map */

@@ -1,7 +1,8 @@
 @import url("https://fonts.googleapis.com/css?family=Josefin+Sans|Josefin+Slab");
 .reset {
   margin: 0;
-  padding: 0; }
+  padding: 0;
+  line-height: 1; }
 
 .jo-sans, .btn {
   font-family: "Josefin Sans", sans-serif; }

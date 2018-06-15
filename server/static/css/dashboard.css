@@ -1,7 +1,8 @@
 @import url("https://fonts.googleapis.com/css?family=Josefin+Sans|Josefin+Slab");
 .reset {
   margin: 0;
-  padding: 0; }
+  padding: 0;
+  line-height: 1; }
 
 .jo-sans {
   font-family: "Josefin Sans", sans-serif; }
@@ -13,7 +14,7 @@ body {
   font-size: 0.9rem; }
 
 .content {
-  padding: 5rem 0 2rem 0; }
+  padding: 5rem 1rem 2rem 1rem; }
 
 .navbar .navbar-brand {
   padding: 0.85rem 1rem 0.65rem 1rem;

@@ -5,8 +5,11 @@
 
 {% block resources %}
     <!-- For s:stock -->
+    <link rel="stylesheet" href="{% static '/css/stock.css' %}">
+    <script type="text/javascript" src="{% static '/js/plotly.min.js' %}" charset="utf-8"></script>
+
     <!-- JS/Django interface -->
-    <script type="text/javascript">
+    <script type="text/javascript" charset="utf-8">
 
     </script>
 {% endblock %}
@@ -49,12 +52,24 @@
 
 {% block content %}
     <!-- For s:stock -->
-    <h3>Info</h3>
+    <h1 class="ticker">{{ symbol }}</h1>
+    <h2 class="name">{{ Name }}</h2>
+    <div class="info-outer">
+        <h3 class="info"><span class="info-description">Sector:</span> {{ Sector }}</h3>
+        <h3 class="info"><span class="info-description">Industry:</span> {{ Industry }}</h3>
+    </div>
+    <div id="plot-main"></div>
+
+    <!-- <h3>Info</h3>
     Name: {{ Name }}<br>
     Symbol: {{ symbol }}<br>
     Sector: {{ Sector }}<br>
     Industry: {{ Industry }}<br>
     <h3>Data</h3>
-    {{ data }}
+    {{ data }} -->
 
+{% endblock %}
+
+{% block scripts %}
+<script src="{% static '/js/plot-main.js' %}" charset="utf-8"></script>
 {% endblock %}

@@ -5,4 +5,4 @@ export key=$(cat key.txt)
 
 # Change directory into server and run
 cd server
-python3 manage.py runserver
+python3 manage.py runserver $1

@@ -20,10 +20,11 @@ def stock_default_view(request, symbol):
     ts = TimeSeries(key=KEY, output_format='json')
 
     # Get data and metadata
-    try:
-        data, meta_data = ts.get_intraday(symbol=symbol,interval='60min', outputsize='full')
-    except:
-        raise Http404("%s is not a valid symbol." % symbol)
+    # try:
+        # data, meta_data = ts.get_intraday(symbol=symbol,interval='60min', outputsize='full')
+    # except:
+        # raise Http404("%s is not a valid symbol." % symbol)
+    data, meta_data = None, None
 
     # Get organization details
     try:
@@ -40,5 +41,5 @@ def stock_default_view(request, symbol):
         'meta': meta_data
     }
     context.update(info)
-    context.update(meta_data)
+    # context.update(meta_data)
     return render(request, 'stocks/stock.html', context)
