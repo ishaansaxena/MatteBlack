@@ -10,7 +10,8 @@
 
     <!-- JS/Django interface -->
     <script type="text/javascript" charset="utf-8">
-
+        var sdata = {{ data|safe }};
+        var symbol = "{{ symbol }}";
     </script>
 {% endblock %}
 
@@ -58,18 +59,33 @@
         <h3 class="info"><span class="info-description">Sector:</span> {{ Sector }}</h3>
         <h3 class="info"><span class="info-description">Industry:</span> {{ Industry }}</h3>
     </div>
-    <div id="plot-main"></div>
+    <div class="row">
+        <div class="col-sm-12">
+            <div id="plot-ts"></div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xl-6 col-sm-12">
+            <div id="plot-ohlc"></div>
+        </div>
+        <div class="col-xl-6 col-sm-12">
+            <div id="plot-candle"></div>
+        </div>
+    </div>
 
     <!-- <h3>Info</h3>
     Name: {{ Name }}<br>
     Symbol: {{ symbol }}<br>
     Sector: {{ Sector }}<br>
-    Industry: {{ Industry }}<br>
-    <h3>Data</h3>
+    Industry: {{ Industry }}<br> -->
+    <!-- <h3>Data</h3>
     {{ data }} -->
 
 {% endblock %}
 
 {% block scripts %}
-<script src="{% static '/js/plot-main.js' %}" charset="utf-8"></script>
+<script src="{% static '/js/plot-global.js' %}" charset="utf-8"></script>
+<script src="{% static '/js/plot-ts.js' %}" charset="utf-8"></script>
+<script src="{% static '/js/plot-ohlc.js' %}" charset="utf-8"></script>
+<script src="{% static '/js/plot-candle.js' %}" charset="utf-8"></script>
 {% endblock %}
