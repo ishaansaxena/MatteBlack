@@ -14,3 +14,7 @@ To-do:
 1. Find ways to get company information (name, sector, etc) dynamically from the stock ticker
 1. Find ways to get company market cap
 1. Find ways to get stock % fall/rise
+1. Create dashboard page:
+    1. User tracked symbols (watchlist)
+    1. Popular symbols
+    1. Tickers and time series from tracked symbols
