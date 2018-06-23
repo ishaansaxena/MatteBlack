@@ -18,3 +18,8 @@ To-do:
     1. User tracked symbols (watchlist)
     1. Popular symbols
     1. Tickers and time series from tracked symbols
+1. Create user model extending Django's model
+    1. Allow Google Sign-in
+    1. Send confirmation email (necessary?)
+    1. Restrict registration (for now)
+    1. Require sign-in for dashboard etc.
