@@ -1,15 +1,18 @@
 @import "_config.sass"
 
+html,
+body
+    height: 100%
+    background-size: cover
+    background-image: linear-gradient(rgba($black, 0.85), rgba($black, 0.85)), url('../assets/background.jpg')
+
 body
     width: 100vw
+    filter: grayscale(1.0)
 
 .view-front
     height: 100vh
-    background: $black
     display: table
-    background-size: cover
-    background-image: linear-gradient(rgba($black, 0.85), rgba($black, 0.85)), url('../assets/background.jpg')
-    filter: grayscale(1.0)
 
     .navbar
         padding: 3rem 0

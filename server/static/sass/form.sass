@@ -1,1 +1,44 @@
 @import "_config.sass"
+
+html,
+body
+    height: 100%
+    background-size: cover
+    background-image: linear-gradient(rgba($black, 0.85), rgba($black, 0.85)), url('../assets/background.jpg')
+
+body
+    display: flex
+    text-align: center
+    align-items: center
+    padding-top: 3rem
+    padding-bottom: 3rem
+    filter: grayscale(100%)
+
+.form
+    margin: auto
+    padding: 3rem 2rem 1rem 2rem
+    width: 100%
+    max-width: 330px
+    border-radius: 3px
+    background: $white
+
+    .form-control
+        position: relative
+        box-sizing: border-box
+        height: auto
+        padding: 10px
+        font-size: 16px
+
+    input[type="text"]
+        margin-bottom: -1px
+        border-bottom-right-radius: 0
+        border-bottom-left-radius: 0
+    input[type="password"]
+        margin-bottom: 10px
+        border-top-left-radius: 0
+        border-top-right-radius: 0
+
+.form-heading > a
+    @extend .jo-slab
+    text-decoration: none
+    color: $black

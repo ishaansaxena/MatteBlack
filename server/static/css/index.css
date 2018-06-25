@@ -10,16 +10,19 @@
 .jo-slab, .view-front .navbar .matte-black {
   font-family: "Josefin Slab", serif; }
 
+html,
 body {
-  width: 100vw; }
+  height: 100%;
+  background-size: cover;
+  background-image: linear-gradient(rgba(34, 34, 34, 0.85), rgba(34, 34, 34, 0.85)), url("../assets/background.jpg"); }
+
+body {
+  width: 100vw;
+  filter: grayscale(1); }
 
 .view-front {
   height: 100vh;
-  background: #222222;
-  display: table;
-  background-size: cover;
-  background-image: linear-gradient(rgba(34, 34, 34, 0.85), rgba(34, 34, 34, 0.85)), url("../assets/background.jpg");
-  filter: grayscale(1); }
+  display: table; }
   .view-front .navbar {
     padding: 3rem 0; }
     .view-front .navbar .matte-black {
