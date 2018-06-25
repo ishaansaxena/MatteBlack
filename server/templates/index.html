@@ -35,7 +35,13 @@
                         different technical indicators for stocks, cryptocurrency, and
                         foreign exchange.
                     </p>
-                    <a href="{% url 's:index' %}" class="btn btn-outline-light">Try it Free</a>
+                    {% if user.is_authenticated %}
+                        <a href="{% url 's:index' %}" class="btn btn-outline-light">Dashboard</a>
+                    {% else %}
+                        <a href="{% url 's:index' %}" class="btn btn-outline-light">Login</a>
+                        <a href="{% url 'u:register' %}" class="btn btn-outline-light">Request Invitation</a>
+                    {% endif %}
+
                 </p>
                 </div>
             </div>
