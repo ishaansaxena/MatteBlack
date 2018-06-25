@@ -29,11 +29,21 @@
     <div class="sidebar-heading h5">Stock Controls</div>
     <div class="sidebar-heading h6 indent">Time Series</div>
     <ul class="nav flex-column no-icon">
-        <li class="nav-item"><a class="nav-link active" href="#">Intraday</a></li>
-        <li class="nav-item"><a class="nav-link" href="#">Daily</a></li>
-        <li class="nav-item"><a class="nav-link" href="#">Weekly</a></li>
-        <li class="nav-item"><a class="nav-link" href="#">Monthly</a></li>
-        <li class="nav-item"><a class="nav-link" href="#">Batch Stock Quotes</a></li>
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 's:timeseries' symbol=symbol format='intraday'%}">Intraday</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 's:timeseries' symbol=symbol format='daily'%}">Daily</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 's:timeseries' symbol=symbol format='weekly'%}">Weekly</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 's:timeseries' symbol=symbol format='monthly'%}">Monthly</a>
+        </li>
+        <!-- <li class="nav-item"> -->
+            <!-- <a class="nav-link" href="{% url 's:timeseries' symbol=symbol format='bsq'%}">Batch Stock Quotes</a> -->
+        <!-- </li> -->
     </ul>
     <div class="sidebar-heading h6 indent">Techincal Indicators</div>
     <ul class="nav flex-column no-icon">
@@ -61,14 +71,17 @@
     </div>
     <div class="row">
         <div class="col-sm-12">
+            <h4 class="plot-heading">{{ format|title }} Time Series</h4>
             <div id="plot-ts"></div>
         </div>
     </div>
     <div class="row">
         <div class="col-xl-6 col-sm-12">
+            <h4 class="plot-heading">OHLC Chart</h4>
             <div id="plot-ohlc"></div>
         </div>
         <div class="col-xl-6 col-sm-12">
+            <h4 class="plot-heading">Candlestick Chart</h4>
             <div id="plot-candle"></div>
         </div>
     </div>
