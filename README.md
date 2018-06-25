@@ -24,3 +24,4 @@ To-do:
     1. Send confirmation email (necessary?)
     1. Restrict registration (for now)
     1. Require sign-in for dashboard etc.
+1. Change @login_required to @permission_required
