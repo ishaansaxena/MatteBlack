@@ -22,4 +22,5 @@ urlpatterns = [
         },
         name='logout'
     ),
+    url(r'^register/$', views.investor_register_view, name='register'),
 ]

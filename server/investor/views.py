@@ -1,3 +1,8 @@
 from django.shortcuts import render
 
-# Create your views here.
+## View methods
+
+# Registration
+def investor_register_view(request):
+    context = {}
+    return render(request, 'investor/register.html', context)

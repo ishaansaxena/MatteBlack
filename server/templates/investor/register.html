@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Login to MatteBlack{% endblock %}
+
+{% block resources %}
+    <!-- For login.html -->
+    <link rel="stylesheet" href="{% static '/css/form.css' %}">
+{% endblock %}
+
+
+{% block content %}
+    <!-- For login.html -->
+    <form class="form" method="post">
+        <h1 class="form-heading py-2"><a href="{% url 'home' %}">MatteBlack</a></h1>
+        <p class="text-center text-muted pb-3">
+            Sorry; we are not accepting any more invitation requests.
+        </p>
+    </form>
+
+{% endblock %}
