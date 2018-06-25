@@ -7,25 +7,31 @@ import pandas
 from alpha_vantage.timeseries import TimeSeries
 from django.core.serializers.json import DjangoJSONEncoder
 
-# Get API Key
+## Global Constants
 KEY = settings.AV_API_KEY
-
-
-# Initialize timeseries
 TS = TimeSeries(key=KEY, output_format='pandas')
+DEFAULT_TS_FORMAT = "daily"
 
 
-# Function maps
+## TimeSeries maps
+
+# Map timeseries format to functions
 TS_MAP = {
     "intraday": TS.get_intraday,
+    "daily":    TS.get_daily,
+    "weekly":   TS.get_weekly,
+    "monthly":  TS.get_monthly,
 }
 
-ARGS_MAP = {
+# Map timeseries format to default kwargs
+TS_KWARGS_MAP = {
     "intraday": {"interval": "1min"}
 }
 
 
-# Generic helper methods
+## Helper methods
+
+# Get organization information from stock symbol
 def get_stock_info(symbol):
     try:
         info = settings.TICKER_DATA[symbol]
@@ -34,6 +40,7 @@ def get_stock_info(symbol):
         print("Details not found for %s" % symbol)
     return info
 
+# Get json data for JS from pandas dataframe
 def get_json_data(data):
     data_dict = {}
     data_dict["dates"] = data.index.values.tolist()
@@ -42,22 +49,28 @@ def get_json_data(data):
     return data_dict
 
 
-# View methods
+## View methods
+
+# Main dashboard
 def stock_index_view(request):
     context = {}
     return render(request, 'stocks/index.html', context)
 
-def stock_timeseries_view(request, symbol):
+# Time series views
+def stock_timeseries_view(request, symbol, format):
     symbol = symbol.upper()
 
+    if format not in TS_MAP:
+        format = DEFAULT_TS_FORMAT
     # Get data and metadata
-    format = "intraday"
+    print(symbol, format)
     try:
         kwargs = {"symbol": symbol}
-        kwargs.update(ARGS_MAP[format])
+        if format in TS_KWARGS_MAP:
+            kwargs.update(TS_KWARGS_MAP[format])
         data, meta_data = TS_MAP[format](**kwargs)
     except:
-        raise Http404("%s is not a valid symbol." % symbol)
+        raise Http404("%s is not a valid symbol or %s is not a valid format" % (symbol, format))
 
     # Process data into json format and get organization details
     data_dict   = get_json_data(data)
@@ -65,10 +78,14 @@ def stock_timeseries_view(request, symbol):
 
     # Create context
     context = {
+        'format': format,
         'symbol': symbol,
         'data': json.dumps(data_dict, cls=DjangoJSONEncoder),
     }
     context.update(info)
     context.update(meta_data)
-    print(meta_data)
-    return render(request, 'stocks/stock.html', context)
+    return render(request, 'stocks/timeseries.html', context)
+
+# Time series default view
+def stock_timeseries_default(request, symbol):
+    return stock_timeseries_view(request, symbol, DEFAULT_TS_FORMAT)
