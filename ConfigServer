@@ -1,5 +1,0 @@
-#!/bin/bash
-
-# Exports
-export AV_API_KEY=$(cat key.txt)
-
