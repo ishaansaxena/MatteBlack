@@ -1,3 +1,5 @@
 from django.contrib import admin
 
-# Register your models here.
+from investor.models import Investor
+
+admin.site.register(Investor)
