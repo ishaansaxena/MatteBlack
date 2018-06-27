@@ -1,0 +1,134 @@
+/**
+ * Josefin Sans
+ */
+
+@font-face {
+    font-family: 'jo-sans';
+    src: url('JosefinSans/Bold.ttf') format('truetype');
+    /* Bold */
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'jo-sans';
+    src: url('JosefinSans/BoldItalic.ttf') format('truetype');
+    /* Bold Italic */
+    font-weight: 900;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'jo-sans';
+    src: url('JosefinSans/Regular.ttf') format('truetype');
+    /* Regular */
+    font-weight: 400;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'jo-sans';
+    src: url('JosefinSans/Italic.ttf') format('truetype');
+    /* Regular Italic */
+    font-weight: 400;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'jo-sans';
+    src: url('JosefinSans/Light.ttf') format('truetype');
+    /* Light */
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'jo-sans';
+    src: url('JosefinSans/LightItalic.ttf') format('truetype');
+    /* Light Italic */
+    font-weight: 300;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'jo-sans';
+    src: url('JosefinSans/Thin.ttf') format('truetype');
+    /* Thin */
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'jo-sans';
+    src: url('JosefinSans/ThinItalic.ttf') format('truetype');
+    /* Thin Italic */
+    font-weight: 100;
+    font-style: italic;
+}
+
+/**
+ * Josefin Slab
+ */
+@font-face {
+    font-family: 'jo-slab';
+    src: url('JosefinSlab/Bold.ttf') format('truetype');
+    /* Bold */
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'jo-slab';
+    src: url('JosefinSlab/BoldItalic.ttf') format('truetype');
+    /* Bold Italic */
+    font-weight: 900;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'jo-slab';
+    src: url('JosefinSlab/Regular.ttf') format('truetype');
+    /* Regular */
+    font-weight: 400;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'jo-slab';
+    src: url('JosefinSlab/Italic.ttf') format('truetype');
+    /* Regular Italic */
+    font-weight: 400;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'jo-slab';
+    src: url('JosefinSlab/Light.ttf') format('truetype');
+    /* Light */
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'jo-slab';
+    src: url('JosefinSlab/LightItalic.ttf') format('truetype');
+    /* Light Italic */
+    font-weight: 300;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'jo-slab';
+    src: url('JosefinSlab/Thin.ttf') format('truetype');
+    /* Thin */
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'jo-slab';
+    src: url('JosefinSlab/ThinItalic.ttf') format('truetype');
+    /* Thin Italic */
+    font-weight: 100;
+    font-style: italic;
+}
