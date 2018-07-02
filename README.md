@@ -15,6 +15,7 @@ A Django-based stock analysis tool using the Python AlphaVantage API Wrapper.
 ###### Structure
 1. Change Plot-* structure for .js files
 ###### Technical
+1. Change data acquiring in client to Ajax and add refresh button with plots.
 1. Filter Intraday data for only current day
 1. Add technical indicators and TI plots
 ###### User stories:
