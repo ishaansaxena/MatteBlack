@@ -9,7 +9,7 @@ from django.core.serializers.json import DjangoJSONEncoder
 
 from alpha_vantage.timeseries import TimeSeries
 
-from symbols.views import track_symbol_view, untrack_symbol_view
+from symbols.views import track_symbol_view, untrack_symbol_view, is_symbol_tracked
 from symbols.models import Symbol
 from investor.models import Investor
 
@@ -55,16 +55,6 @@ def get_json_data(data):
     return data_dict
 
 
-# Check if symbol is tracked
-def is_symbol_tracked(symbol, user):
-    type, symbol = symbol.split(':')
-    try:
-        obj = Symbol.objects.get(type=type, symbol=symbol)
-    except:
-        return False
-    tracker = Investor.objects.get(user=user)
-    return tracker in obj.trackers.all()
-
 ## View methods
 
 # Main dashboard
@@ -77,8 +67,7 @@ def stock_index_view(request):
 @login_required
 def stock_timeseries_view(request, symbol, format):
     symbol = symbol.upper()
-    symbol_verbose = 'stock:' + symbol
-    tracked = is_symbol_tracked(symbol_verbose, request.user)
+    tracked = is_symbol_tracked("stock", symbol, request.user)
 
     if format not in TS_MAP:
         format = DEFAULT_TS_FORMAT
@@ -109,6 +98,7 @@ def stock_timeseries_view(request, symbol, format):
 # Time series default view
 @login_required
 def stock_timeseries_default(request, symbol):
+    symbol = symbol.upper()
     return stock_timeseries_view(request, symbol, DEFAULT_TS_FORMAT)
 
 # Track stock view
