@@ -5,4 +5,10 @@ $(document).ready(function() {
             console.log(data);
         });
     });
+    $('#untrack').click(function() {
+        console.log(trackURL);
+        $.get(untrackURL, function(data) {
+            console.log(data);
+        });
+    });
 });
