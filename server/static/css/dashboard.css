@@ -36,6 +36,10 @@ body {
   font-weight: bolder;
   color: #FFFFFF;
   background: #00796B; }
+  .navbar .btn-nav.negative {
+    background: #D64541; }
+.navbar .hide {
+  display: none !important; }
 
 .sidebar {
   position: fixed;
@@ -44,7 +48,6 @@ body {
   left: 0;
   z-index: 99;
   padding: 3rem 0 0 0;
-  background: red;
   box-shadow: inset -1px 0 0 rgba(34, 34, 34, 0.05); }
   .sidebar .sidebar-sticky {
     position: sticky;

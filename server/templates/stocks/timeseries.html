@@ -22,12 +22,22 @@
     <!-- For s:stock -->
 
     {% if tracked %}
-    <ul id="untrack-outer" class="navbar-nav px-3 d-none d-md-block btn-nav">
+    <ul id="untrack-outer" class="navbar-nav px-3 d-none d-md-block btn-nav negative">
         <li class="nav-item text-nowrap">
             <a id="untrack" class="nav-link" href="#">Ignore</a>
         </li>
     </ul>
+    <ul id="track-outer" class="navbar-nav px-3 d-none d-md-block btn-nav hide">
+        <li class="nav-item text-nowrap">
+            <a id="track" class="nav-link" href="#">Track</a>
+        </li>
+    </ul>
     {% else %}
+    <ul id="untrack-outer" class="navbar-nav px-3 d-none d-md-block btn-nav negative hide">
+        <li class="nav-item text-nowrap">
+            <a id="untrack" class="nav-link" href="#">Ignore</a>
+        </li>
+    </ul>
     <ul id="track-outer" class="navbar-nav px-3 d-none d-md-block btn-nav">
         <li class="nav-item text-nowrap">
             <a id="track" class="nav-link" href="#">Track</a>

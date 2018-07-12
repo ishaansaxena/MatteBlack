@@ -35,6 +35,12 @@ body
         color: $white
         background: $A200
 
+        &.negative
+            background: #D64541
+
+    .hide
+        display: none !important
+
 .sidebar
     position: fixed
     top: 0
@@ -42,7 +48,6 @@ body
     left: 0
     z-index: 99
     padding: 3rem 0 0 0
-    background: red
     box-shadow: inset -1px 0 0 rgba($black, 0.05)
 
     .sidebar-sticky
