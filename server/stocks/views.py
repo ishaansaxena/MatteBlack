@@ -115,12 +115,10 @@ def stock_timeseries_default(request, symbol):
 @login_required
 def track_stock_view(request, symbol):
     symbol = symbol.upper()
-    symbol_verbose = 'stock:' + symbol
-    return track_symbol_view(request, symbol_verbose)
+    return track_symbol_view(request, "stock", symbol)
 
 # Track stock view
 @login_required
 def untrack_stock_view(request, symbol):
     symbol = symbol.upper()
-    symbol_verbose = 'stock:' + symbol
-    return untrack_symbol_view(request, symbol_verbose)
+    return untrack_symbol_view(request, "stock", symbol)

@@ -33,16 +33,18 @@ def get_symbol_data(symbol):
 ## View methods
 
 # Track symbol view
-def track_symbol_view(request, symbol):
-    symbol = get_symbol_object(symbol)
+def track_symbol_view(request, type, symbol):
+    symbol_verbose = type + ":" + symbol
+    symbol = get_symbol_object(symbol_verbose)
     tracker = Investor.objects.get(user=request.user)
     symbol.trackers.add(tracker)
     data = {}
     return JsonResponse(data)
 
 # Track symbol view
-def untrack_symbol_view(request, symbol):
-    symbol = get_symbol_object(symbol)
+def untrack_symbol_view(request, type, symbol):
+    symbol_verbose = type + ":" + symbol
+    symbol = get_symbol_object(symbol_verbose)
     tracker = Investor.objects.get(user=request.user)
     symbol.trackers.remove(tracker)
     data = {}
