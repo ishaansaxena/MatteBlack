@@ -51,6 +51,7 @@ ALLOWED_HOSTS = ['*']
 
 INSTALLED_APPS = [
     'investor.apps.InvestorConfig',
+    'symbols.apps.SymbolsConfig',
     'stocks.apps.StocksConfig',
     'django.contrib.admin',
     'django.contrib.auth',
