@@ -11,8 +11,8 @@ function plot_ohlc() {
         low:        d_l,
         close:      d_c,
         line:       {color: 'rgba(31,119,180,1)'},
-        increasing: {line: {color: '#17BECF'}},
-        decreasing: {line: {color: '#7F7F7F'}},
+        increasing: {line: {color: colors.positive}},
+        decreasing: {line: {color: colors.negative}},
     }
 
     var data = [trace];

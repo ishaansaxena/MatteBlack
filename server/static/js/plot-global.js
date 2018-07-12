@@ -14,6 +14,6 @@ const margin = {
 
 // Colors
 const colors = {
-    positive:   "#00796B",
-    negative:   "#D64541"
+    positive:   "#00B16A",
+    negative:   "#34495E"
 }

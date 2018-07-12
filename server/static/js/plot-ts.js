@@ -7,7 +7,7 @@ function plot_ts() {
         name:   symbol + " High",
         x:      dates,
         y:      d_h,
-        line: {color: '#17BECF'}
+        line: {color: colors.positive}
     }
 
     var trace2 = {
@@ -16,7 +16,7 @@ function plot_ts() {
         name:   symbol + " Low",
         x:      dates,
         y:      d_l,
-        line: {color: '#7F7F7F'}
+        line: {color: colors.negative}
     }
 
     var layout = {
@@ -24,7 +24,8 @@ function plot_ts() {
             l: 50, r: 50,
             b: 50, t: 50,
             pad: 0
-        }
+        },
+        showlegend: false
     };
 
     var data = [trace1, trace2]
