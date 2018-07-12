@@ -1,12 +1,15 @@
+import json
+import pandas
+
 from django.shortcuts import render
 from django.conf import settings
 from django.http import Http404
 from django.contrib.auth.decorators import login_required
-
-import json
-import pandas
-from alpha_vantage.timeseries import TimeSeries
 from django.core.serializers.json import DjangoJSONEncoder
+
+from alpha_vantage.timeseries import TimeSeries
+
+import investor
 
 ## Global Constants
 KEY = settings.AV_API_KEY
@@ -66,7 +69,6 @@ def stock_timeseries_view(request, symbol, format):
     if format not in TS_MAP:
         format = DEFAULT_TS_FORMAT
     # Get data and metadata
-    print(symbol, format)
     try:
         kwargs = {'symbol': symbol}
         if format in TS_KWARGS_MAP:
@@ -81,9 +83,9 @@ def stock_timeseries_view(request, symbol, format):
 
     # Create context
     context = {
-        'format': format,
-        'symbol': symbol,
-        'data': json.dumps(data_dict, cls=DjangoJSONEncoder),
+        'format':   format,
+        'symbol':   symbol,
+        'data':     json.dumps(data_dict, cls=DjangoJSONEncoder),
     }
     context.update(info)
     context.update(meta_data)
@@ -93,3 +95,8 @@ def stock_timeseries_view(request, symbol, format):
 @login_required
 def stock_timeseries_default(request, symbol):
     return stock_timeseries_view(request, symbol, DEFAULT_TS_FORMAT)
+
+# Track stock view
+def track_stock_view(request, symbol):
+    symbol_verbose = "stock:" + symbol
+    return investor.views.track_symbol_view(request, symbol_verbose)

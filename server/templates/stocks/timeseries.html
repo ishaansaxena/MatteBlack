@@ -7,11 +7,13 @@
     <!-- For s:stock -->
     <link rel="stylesheet" href="{% static '/css/stock.css' %}">
     <script type="text/javascript" src="{% static '/js/plotly.min.js' %}" charset="utf-8"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E=" crossorigin="anonymous"></script>
 
     <!-- JS/Django interface -->
     <script type="text/javascript" charset="utf-8">
         var sdata = {{ data|safe }};
         var symbol = "{{ symbol }}";
+        var trackURL = "{% url 's:track' symbol=symbol %}";
     </script>
 {% endblock %}
 
@@ -19,7 +21,7 @@
     <!-- For s:stock -->
     <ul class="navbar-nav px-3 d-none d-md-block btn-nav">
         <li class="nav-item text-nowrap">
-            <a class="nav-link" href="#">Track</a>
+            <a id="track" class="nav-link" href="#">Track</a>
         </li>
     </ul>
 {% endblock %}
@@ -86,14 +88,6 @@
         </div>
     </div>
 
-    <!-- <h3>Info</h3>
-    Name: {{ Name }}<br>
-    Symbol: {{ symbol }}<br>
-    Sector: {{ Sector }}<br>
-    Industry: {{ Industry }}<br> -->
-    <!-- <h3>Data</h3>
-    {{ data }} -->
-
 {% endblock %}
 
 {% block scripts %}
@@ -101,4 +95,5 @@
 <script src="{% static '/js/plot-ts.js' %}" charset="utf-8"></script>
 <script src="{% static '/js/plot-ohlc.js' %}" charset="utf-8"></script>
 <script src="{% static '/js/plot-candle.js' %}" charset="utf-8"></script>
+<script src="{% static '/js/track.js' %}" charset="utf-8"></script>
 {% endblock %}
