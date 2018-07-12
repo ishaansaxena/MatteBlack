@@ -14,6 +14,14 @@ SLUG_MAP = {
 
 ## Helper methods
 
+# Get symbol object from verbose symbol
+def get_symbol_object(symbol):
+    type, symbol, slug = get_symbol_data(symbol)
+    obj = Symbol.objects.get(
+        type=type, symbol=symbol, slug=slug
+    )
+    return obj
+
 # Get Symbol information
 def get_symbol_data(symbol):
     type = symbol.split(':')[0]
@@ -26,26 +34,16 @@ def get_symbol_data(symbol):
 
 # Track symbol view
 def track_symbol_view(request, symbol):
-    type, symbol, slug = get_symbol_data(symbol)
-    obj, created = Symbol.objects.get_or_create(
-        type=type, symbol=symbol, slug=slug
-    )
+    symbol = get_symbol_object(symbol)
     tracker = Investor.objects.get(user=request.user)
-    obj.trackers.add(tracker)
-    data = {
-        'symbol':   symbol,
-    }
+    symbol.trackers.add(tracker)
+    data = {}
     return JsonResponse(data)
 
 # Track symbol view
 def untrack_symbol_view(request, symbol):
-    type, symbol, slug = get_symbol_data(symbol)
-    obj = Symbol.objects.get(
-        type=type, symbol=symbol, slug=slug
-    )
+    symbol = get_symbol_object(symbol)
     tracker = Investor.objects.get(user=request.user)
-    obj.trackers.remove(tracker)
-    data = {
-        'symbol':   symbol,
-    }
+    symbol.trackers.remove(tracker)
+    data = {}
     return JsonResponse(data)
