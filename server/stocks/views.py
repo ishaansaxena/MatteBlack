@@ -98,5 +98,5 @@ def stock_timeseries_default(request, symbol):
 
 # Track stock view
 def track_stock_view(request, symbol):
-    symbol_verbose = "stock:" + symbol
+    symbol_verbose = 'stock:' + symbol
     return investor.views.track_symbol_view(request, symbol_verbose)
