@@ -14,16 +14,27 @@
         var sdata = {{ data|safe }};
         var symbol = "{{ symbol }}";
         var trackURL = "{% url 's:track' symbol=symbol %}";
+        var untrackURL = "{% url 's:untrack' symbol=symbol %}";
     </script>
 {% endblock %}
 
 {% block btn_nav %}
     <!-- For s:stock -->
-    <ul class="navbar-nav px-3 d-none d-md-block btn-nav">
+
+    {% if tracked %}
+    <ul id="untrack-outer" class="navbar-nav px-3 d-none d-md-block btn-nav">
+        <li class="nav-item text-nowrap">
+            <a id="untrack" class="nav-link" href="#">Ignore</a>
+        </li>
+    </ul>
+    {% else %}
+    <ul id="track-outer" class="navbar-nav px-3 d-none d-md-block btn-nav">
         <li class="nav-item text-nowrap">
             <a id="track" class="nav-link" href="#">Track</a>
         </li>
     </ul>
+    {% endif %}
+
 {% endblock %}
 
 {% block sidebar %}
